@@ -21,8 +21,7 @@ function setup() {
 
 function draw() {
   background("grey"); 
-  engine = Engine.create();
-  world = engine.world;
+Engine.update(engine);
  ground.display();
  
  for(var k =0; k<=width ; k =k+80  ){
