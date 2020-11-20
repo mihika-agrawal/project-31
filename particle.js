@@ -1,7 +1,6 @@
 class Particle {
 constructor(x,y,r){
 var options={
-    isStatic:false,
 restitution:0.4
 }
 this.r=r;
