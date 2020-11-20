@@ -15,7 +15,9 @@ function setup() {
     world = engine.world;
 
   ground= new Ground(240,790,480,20);
-
+ if(frameCount%60===0){
+   particles.push(new Particle(random(width/2-10,width/2+10),30,10));
+ }
   
 }
 
@@ -55,9 +57,7 @@ for(var m;m < plinkos.length; m++){
 for(var n;n < plinkos.length; n++){
         plinkos[n].display();
       }
-    if(frameCount%60===0){
-   particles.push(new Particle(random(width/2-10,width/2+10),30,10));
- }
+   
 for(var b;b < particles.length; b++){
   particles[b].display();
 }
