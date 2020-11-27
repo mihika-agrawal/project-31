@@ -15,10 +15,31 @@ function setup() {
     world = engine.world;
 
   ground= new Ground(240,790,480,20);
- if(frameCount%60===0){
-   particles.push(new Particle(random(width/2-10,width/2+10),30,10));
- }
-  
+ 
+for(var j= 30; j<= width-10 ; j=j+50){
+plinkos.push( new Plinko(j,75,10));
+}
+/*for(var j;j < plinkos.length; j++){
+  plinkos[j].display();
+}*/
+for(var j= 50; j<= width-10 ; j=j+50){
+  plinkos.push( new Plinko(j,175,10));
+  }
+   /*for(var l;l < plinkos.length; l++){
+    plinkos[l].display();
+  }*/
+for(var j= 20; j<= width-10 ; j=j+50){
+    plinkos.push( new Plinko(j,275,10));
+    }
+/*for(var m;m < plinkos.length; m++){
+      plinkos[m].display();
+    }*/
+ for(var j= 10; j<= width-10 ; j=j+50){
+      plinkos.push( new Plinko(j,375,10));
+      }
+  for(var k =0; k<=width ; k =k+80  ){
+  divisions.push(new Divisions(k, height-divisionheight/2,10,divisionheight));
+}
 }
 
 function draw() {
@@ -26,38 +47,18 @@ function draw() {
 Engine.update(engine);
  ground.display();
  
- for(var k =0; k<=width ; k =k+80  ){
-  divisions.push(new Divisions(k, height-divisionheight/2,10,divisionheight));
-}
+  for(var i;i < plinkos.length; i++){
+        plinkos[i].display();
+      }
+ 
  for(var k ;k < divisions.length; k++){
    divisions[k].display();
  }
 
-for(var j= 30; j<= width-10 ; j=j+50){
-plinkos.push( new Plinko(j,75,10));
-}
-for(var j;j < plinkos.length; j++){
-  plinkos[j].display();
-}
-for(var l= 50; l<= width-10 ; l=l+50){
-  plinkos.push( new Plinko(l,175,10));
-  }
-   for(var l;l < plinkos.length; l++){
-    plinkos[l].display();
-  }
-for(var m= 20; m<= width-10 ; m=m+50){
-    plinkos.push( new Plinko(m,275,10));
-    }
-for(var m;m < plinkos.length; m++){
-      plinkos[m].display();
-    }
- for(var n= 10; n<= width-10 ; n=n+50){
-      plinkos.push( new Plinko(n,375,10));
-      }
-for(var n;n < plinkos.length; n++){
-        plinkos[n].display();
-      }
-   
+
+   if(frameCount%60===0){
+   particles.push(new Particle(random(width/2-10,width/2+10),30,10));
+ }
 for(var b;b < particles.length; b++){
   particles[b].display();
 }
