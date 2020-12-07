@@ -12,7 +12,7 @@ constructor(x,y,r){
 }
 display(){
     fill("white");
-    var p= this.body.position;
+    var pos= this.body.position;
     var angle = this.body.angle;
 
         push();
